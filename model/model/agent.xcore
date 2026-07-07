@@ -1,0 +1,166 @@
+@Ecore(nsURI="https://agent.models.nasdanika.org", nsPrefix="org.nasdanika.models.agent")
+@GenModel(
+    featureDelegation="Dynamic",
+    complianceLevel="21.0",
+    suppressGenModelAnnotations="false",
+    copyrightFields="false",
+    operationReflection="true",
+    bundleManifest="false",
+    importOrganizing="true"
+)
+package org.nasdanika.models.agent
+
+//import org.nasdanika.models.agent.AgentPackage
+//import org.eclipse.emf.ecore.EObject
+
+annotation "http://www.eclipse.org/emf/2002/Ecore" as Ecore
+annotation "http://www.eclipse.org/emf/2002/GenModel" as GenModel
+annotation "urn:org.nasdanika" as Nasdanika
+
+// TODO - actors and roles 
+
+@GenModel(documentation="Base class for named model elements.")
+abstract class NamedElement {
+    String name
+    @GenModel(documentation="Markdown documentation of this element.")
+    String description
+}
+
+@GenModel(documentation="The root container: a system of agents, the models they run on, the tasks they perform, and the tools and skills they use.")
+class AgentSystem extends NamedElement {
+    contains Llm[] models
+    contains Agent[] agents
+    contains Task[] tasks
+    contains Tool[] tools
+    contains Skill[] skills
+}
+
+@GenModel(documentation="A generic name/value pair for provider-specific settings not worth first-class features.")
+class Property {
+    String name
+    String value
+}
+
+@GenModel(documentation="A language model an agent runs on: provider, model identifier, and inference settings. Deployment specifics (endpoints, credentials) belong in a separate deployment model referencing this one.")
+class Llm extends NamedElement {
+    @GenModel(documentation="Provider, e.g. anthropic, openai, azure, bedrock, ollama.")
+    String provider
+    @GenModel(documentation="Model identifier, e.g. claude-sonnet-4-5, gpt-4o.")
+    String model
+    @GenModel(documentation="Sampling temperature. Unset means provider default.")
+    Double temperature
+    @GenModel(documentation="Maximum output tokens. Unset means provider default.")
+    Integer maxTokens
+    contains Property[] properties
+}
+
+@GenModel(documentation="An agent: a persona bound to a model, equipped with tools, skills, and examples. The persona is the instructions (system prompt); everything else is capability wiring.")
+class Agent extends NamedElement {
+    @GenModel(documentation="Persona / system prompt in Markdown: role, goals, constraints, tone.")
+    String instructions
+    refers Llm llm
+    refers Tool[] tools
+    refers Skill[] skills
+    @GenModel(documentation="Agents this agent may hand work off to (delegation / A2A-style handoff).")
+    refers Agent[] handoffs
+    contains ExampleSet[] exampleSets
+}
+
+@GenModel(documentation="A unit of work: what needs to be done, what the result should look like, who performs it, and what it depends on.")
+class Task extends NamedElement {
+    @GenModel(documentation="Markdown description of the expected output; the acceptance criteria of the task.")
+    String expectedOutput
+    @GenModel(documentation="The agent responsible for performing this task.")
+    refers Agent performer
+    @GenModel(documentation="Tasks whose outputs this task consumes; defines execution ordering.")
+    refers Task[] dependsOn
+    contains Parameter[] inputs
+    contains ExampleSet[] exampleSets
+}
+
+@GenModel(documentation="JSON Schema primitive types for tool and task parameters.")
+enum JsonType {
+    ^string
+    number
+    integer
+    ^boolean
+    object
+    array
+}
+
+@GenModel(documentation="A typed parameter of a tool or task, aligned with JSON Schema so tool definitions can be exported to any function-calling API.")
+class Parameter extends NamedElement {
+    JsonType ^type
+    boolean required
+    @GenModel(documentation="Default value as a string literal, if any.")
+    String defaultValue
+}
+
+@GenModel(documentation="Abstract base for tools: a typed capability an agent may invoke. Subclasses bind the declaration to an implementation.")
+abstract class Tool extends NamedElement {
+    contains Parameter[] parameters
+    @GenModel(documentation="Markdown description of what the tool returns.")
+    String returns
+}
+
+@GenModel(documentation="A tool provided by an MCP (Model Context Protocol) server.")
+class McpTool extends Tool {
+    @GenModel(documentation="MCP server identifier or URI.")
+    String server
+    @GenModel(documentation="Tool name as published by the server, if different from the element name.")
+    String toolName
+}
+
+@GenModel(documentation="A tool implemented in Java, for direct interpretation of the model on the JVM.")
+class JavaTool extends Tool {
+    @GenModel(documentation="Fully qualified name of the implementation class.")
+    String implementationClass
+}
+
+@GenModel(documentation="An agent exposed as a tool: the caller treats delegation as a tool invocation.")
+class AgentTool extends Tool {
+    refers Agent agent
+}
+
+@GenModel(documentation="A skill: procedural knowledge an agent loads on demand, in the sense of Anthropic Agent Skills (SKILL.md), i.e. instructions plus supporting resources.")
+class Skill extends NamedElement {
+    @GenModel(documentation="Skill body in Markdown: the how-to the agent follows when the skill is triggered.")
+    String instructions
+    contains Resource[] resources
+}
+
+@GenModel(documentation="A supporting artifact of a skill: a reference document, template, or script.")
+class Resource extends NamedElement {
+    @GenModel(documentation="Location of the resource, e.g. a relative path or URI.")
+    String location
+}
+
+@GenModel(documentation="A single input/output demonstration used for few-shot prompting.")
+class Example extends NamedElement {
+    String input
+    String output
+}
+
+@GenModel(documentation="A set of examples with a selection strategy: which examples are included in a prompt is a runtime retrieval decision, not a static list.")
+class ExampleSet extends NamedElement {
+    contains Example[] examples
+    contains SelectionStrategy selectionStrategy
+}
+
+@GenModel(documentation="Abstract policy for choosing examples from an example set at prompt-construction time.")
+abstract class SelectionStrategy {
+}
+
+@GenModel(documentation="Include all examples, optionally capped.")
+class AllExamples extends SelectionStrategy {
+    @GenModel(documentation="Maximum number of examples to include; unset means no cap.")
+    Integer limit
+}
+
+@GenModel(documentation="Select examples most similar to the current input, e.g. by embedding distance.")
+class SimilaritySelection extends SelectionStrategy {
+    @GenModel(documentation="Embedding model identifier used to compute similarity.")
+    String embeddingModel
+    @GenModel(documentation="Number of nearest examples to include.")
+    int topK
+}
