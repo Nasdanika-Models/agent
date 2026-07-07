@@ -1,0 +1,19 @@
+app.Action:
+  icon: https://docs.nasdanika.org/images/nasdanika-logo.png
+  text: Nasdanika Templates
+  location: https://github.com/Nasdanika-Templates
+  children:
+    - app.ActionReference: "my.xmi#/"
+    - app.Action:
+        location: ${base-uri}search.html
+        icon: fas fa-search
+        text: Search
+        content:
+          content.Interpolator:
+            source:
+              content.Resource: classpath://org/nasdanika/models/app/gen/search.html
+  navigation:
+    - app.Action:
+        location: https://github.com/Nasdanika-Templates/xcore-doc
+        icon: fab fa-github
+        text: Sources
