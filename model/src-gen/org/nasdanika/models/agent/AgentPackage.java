@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.nasdanika.models.nxcore.NxcorePackage;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -60,52 +62,6 @@ public interface AgentPackage extends EPackage {
 	AgentPackage eINSTANCE = org.nasdanika.models.agent.impl.AgentPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.NamedElementImpl <em>Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.models.agent.impl.NamedElementImpl
-	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getNamedElement()
-	 * @generated
-	 */
-	int NAMED_ELEMENT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__DESCRIPTION = 1;
-
-	/**
-	 * The number of structural features of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.AgentSystemImpl <em>System</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,7 +69,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getAgentSystem()
 	 * @generated
 	 */
-	int AGENT_SYSTEM = 1;
+	int AGENT_SYSTEM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -122,16 +159,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM__NAME = NAMED_ELEMENT__NAME;
+	int AGENT_SYSTEM__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int AGENT_SYSTEM__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Models</b></em>' containment reference list.
@@ -140,7 +222,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM__MODELS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int AGENT_SYSTEM__MODELS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Agents</b></em>' containment reference list.
@@ -149,7 +231,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM__AGENTS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int AGENT_SYSTEM__AGENTS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
@@ -158,7 +240,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM__TASKS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int AGENT_SYSTEM__TASKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Tools</b></em>' containment reference list.
@@ -167,7 +249,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM__TOOLS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int AGENT_SYSTEM__TOOLS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Skills</b></em>' containment reference list.
@@ -176,7 +258,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM__SKILLS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int AGENT_SYSTEM__SKILLS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>System</em>' class.
@@ -185,7 +267,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int AGENT_SYSTEM_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_SYSTEM___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -194,7 +294,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_SYSTEM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int AGENT_SYSTEM_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.PropertyImpl <em>Property</em>}' class.
@@ -204,7 +304,7 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPERTY = 2;
+	int PROPERTY = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +350,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getLlm()
 	 * @generated
 	 */
-	int LLM = 3;
+	int LLM = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -259,16 +440,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM__NAME = NAMED_ELEMENT__NAME;
+	int LLM__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LLM__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int LLM__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Provider</b></em>' attribute.
@@ -277,7 +503,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM__PROVIDER = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LLM__PROVIDER = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Model</b></em>' attribute.
@@ -286,7 +512,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM__MODEL = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LLM__MODEL = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
@@ -295,7 +521,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM__TEMPERATURE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LLM__TEMPERATURE = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Max Tokens</b></em>' attribute.
@@ -304,7 +530,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM__MAX_TOKENS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int LLM__MAX_TOKENS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -313,7 +539,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM__PROPERTIES = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int LLM__PROPERTIES = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Llm</em>' class.
@@ -322,7 +548,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int LLM_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LLM___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Llm</em>' class.
@@ -331,7 +575,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LLM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LLM_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.AgentImpl <em>Agent</em>}' class.
@@ -341,7 +585,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getAgent()
 	 * @generated
 	 */
-	int AGENT = 4;
+	int AGENT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -350,16 +675,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__NAME = NAMED_ELEMENT__NAME;
+	int AGENT__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int AGENT__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' attribute.
@@ -368,7 +738,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__INSTRUCTIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int AGENT__INSTRUCTIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Llm</b></em>' reference.
@@ -377,7 +747,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__LLM = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int AGENT__LLM = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Tools</b></em>' reference list.
@@ -386,7 +756,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__TOOLS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int AGENT__TOOLS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Skills</b></em>' reference list.
@@ -395,7 +765,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__SKILLS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int AGENT__SKILLS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Handoffs</b></em>' reference list.
@@ -404,7 +774,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__HANDOFFS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int AGENT__HANDOFFS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Example Sets</b></em>' containment reference list.
@@ -413,7 +783,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT__EXAMPLE_SETS = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int AGENT__EXAMPLE_SETS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of structural features of the '<em>Agent</em>' class.
@@ -422,7 +792,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int AGENT_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 9;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Agent</em>' class.
@@ -431,7 +819,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int AGENT_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.TaskImpl <em>Task</em>}' class.
@@ -441,7 +829,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getTask()
 	 * @generated
 	 */
-	int TASK = 5;
+	int TASK = 4;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -450,16 +919,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__NAME = NAMED_ELEMENT__NAME;
+	int TASK__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int TASK__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Expected Output</b></em>' attribute.
@@ -468,7 +982,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__EXPECTED_OUTPUT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int TASK__EXPECTED_OUTPUT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Performer</b></em>' reference.
@@ -477,7 +991,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__PERFORMER = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int TASK__PERFORMER = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Depends On</b></em>' reference list.
@@ -486,7 +1000,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__DEPENDS_ON = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int TASK__DEPENDS_ON = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
@@ -495,7 +1009,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__INPUTS = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int TASK__INPUTS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Example Sets</b></em>' containment reference list.
@@ -504,7 +1018,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__EXAMPLE_SETS = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int TASK__EXAMPLE_SETS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -513,7 +1027,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int TASK_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Task</em>' class.
@@ -522,7 +1054,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int TASK_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -532,7 +1064,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 6;
+	int PARAMETER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -541,16 +1154,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__NAME = NAMED_ELEMENT__NAME;
+	int PARAMETER__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int PARAMETER__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -559,7 +1217,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PARAMETER__TYPE = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Required</b></em>' attribute.
@@ -568,7 +1226,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__REQUIRED = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PARAMETER__REQUIRED = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
@@ -577,7 +1235,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER__DEFAULT_VALUE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int PARAMETER__DEFAULT_VALUE = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
@@ -586,7 +1244,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int PARAMETER_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 6;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -595,7 +1271,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int PARAMETER_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.ToolImpl <em>Tool</em>}' class.
@@ -605,7 +1281,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getTool()
 	 * @generated
 	 */
-	int TOOL = 7;
+	int TOOL = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -614,16 +1371,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL__NAME = NAMED_ELEMENT__NAME;
+	int TOOL__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int TOOL__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -632,7 +1434,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL__PARAMETERS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int TOOL__PARAMETERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Returns</b></em>' attribute.
@@ -641,7 +1443,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL__RETURNS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int TOOL__RETURNS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Tool</em>' class.
@@ -650,7 +1452,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int TOOL_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOOL___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Tool</em>' class.
@@ -659,7 +1479,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOOL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int TOOL_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.McpToolImpl <em>Mcp Tool</em>}' class.
@@ -669,7 +1489,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getMcpTool()
 	 * @generated
 	 */
-	int MCP_TOOL = 8;
+	int MCP_TOOL = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__ID = TOOL__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__DOCUMENTATION = TOOL__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__DOC_REF = TOOL__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__DOC_FORMAT = TOOL__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__DOC_CONTENTS = TOOL__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__DOC_SECTIONS = TOOL__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__MARKERS = TOOL__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__ICON = TOOL__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__URIS = TOOL__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -681,13 +1582,58 @@ public interface AgentPackage extends EPackage {
 	int MCP_TOOL__NAME = TOOL__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MCP_TOOL__DESCRIPTION = TOOL__DESCRIPTION;
+	int MCP_TOOL__DURATION = TOOL__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__START = TOOL__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__END = TOOL__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__CONTROL_APPLICATIONS = TOOL__CONTROL_APPLICATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__RISKS = TOOL__RISKS;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL__WAIVERS = TOOL__WAIVERS;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -735,6 +1681,24 @@ public interface AgentPackage extends EPackage {
 	int MCP_TOOL_FEATURE_COUNT = TOOL_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL___COLLECT__OBJECT_EREFERENCE_ELIST = TOOL___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MCP_TOOL___GET_REFERRERS__EREFERENCE = TOOL___GET_REFERRERS__EREFERENCE;
+
+	/**
 	 * The number of operations of the '<em>Mcp Tool</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -751,7 +1715,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getJavaTool()
 	 * @generated
 	 */
-	int JAVA_TOOL = 9;
+	int JAVA_TOOL = 8;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__ID = TOOL__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__DOCUMENTATION = TOOL__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__DOC_REF = TOOL__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__DOC_FORMAT = TOOL__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__DOC_CONTENTS = TOOL__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__DOC_SECTIONS = TOOL__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__MARKERS = TOOL__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__ICON = TOOL__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__URIS = TOOL__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -763,13 +1808,58 @@ public interface AgentPackage extends EPackage {
 	int JAVA_TOOL__NAME = TOOL__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JAVA_TOOL__DESCRIPTION = TOOL__DESCRIPTION;
+	int JAVA_TOOL__DURATION = TOOL__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__START = TOOL__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__END = TOOL__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__CONTROL_APPLICATIONS = TOOL__CONTROL_APPLICATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__RISKS = TOOL__RISKS;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL__WAIVERS = TOOL__WAIVERS;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -808,6 +1898,24 @@ public interface AgentPackage extends EPackage {
 	int JAVA_TOOL_FEATURE_COUNT = TOOL_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL___COLLECT__OBJECT_EREFERENCE_ELIST = TOOL___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JAVA_TOOL___GET_REFERRERS__EREFERENCE = TOOL___GET_REFERRERS__EREFERENCE;
+
+	/**
 	 * The number of operations of the '<em>Java Tool</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -824,7 +1932,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getAgentTool()
 	 * @generated
 	 */
-	int AGENT_TOOL = 10;
+	int AGENT_TOOL = 9;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__ID = TOOL__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__DOCUMENTATION = TOOL__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__DOC_REF = TOOL__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__DOC_FORMAT = TOOL__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__DOC_CONTENTS = TOOL__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__DOC_SECTIONS = TOOL__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__MARKERS = TOOL__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__ICON = TOOL__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__URIS = TOOL__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -836,13 +2025,58 @@ public interface AgentPackage extends EPackage {
 	int AGENT_TOOL__NAME = TOOL__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AGENT_TOOL__DESCRIPTION = TOOL__DESCRIPTION;
+	int AGENT_TOOL__DURATION = TOOL__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__START = TOOL__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__END = TOOL__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__CONTROL_APPLICATIONS = TOOL__CONTROL_APPLICATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__RISKS = TOOL__RISKS;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL__WAIVERS = TOOL__WAIVERS;
 
 	/**
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
@@ -881,6 +2115,24 @@ public interface AgentPackage extends EPackage {
 	int AGENT_TOOL_FEATURE_COUNT = TOOL_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL___COLLECT__OBJECT_EREFERENCE_ELIST = TOOL___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AGENT_TOOL___GET_REFERRERS__EREFERENCE = TOOL___GET_REFERRERS__EREFERENCE;
+
+	/**
 	 * The number of operations of the '<em>Tool</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -897,7 +2149,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getSkill()
 	 * @generated
 	 */
-	int SKILL = 11;
+	int SKILL = 10;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -906,16 +2239,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL__NAME = NAMED_ELEMENT__NAME;
+	int SKILL__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int SKILL__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' attribute.
@@ -924,7 +2302,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL__INSTRUCTIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int SKILL__INSTRUCTIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -933,7 +2311,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL__RESOURCES = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int SKILL__RESOURCES = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Skill</em>' class.
@@ -942,7 +2320,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int SKILL_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SKILL___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Skill</em>' class.
@@ -951,7 +2347,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SKILL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int SKILL_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.ResourceImpl <em>Resource</em>}' class.
@@ -961,7 +2357,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 12;
+	int RESOURCE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -970,16 +2447,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__NAME = NAMED_ELEMENT__NAME;
+	int RESOURCE__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int RESOURCE__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -988,7 +2510,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__LOCATION = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE__LOCATION = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -997,7 +2519,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Resource</em>' class.
@@ -1006,7 +2546,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.ExampleImpl <em>Example</em>}' class.
@@ -1016,7 +2556,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getExample()
 	 * @generated
 	 */
-	int EXAMPLE = 13;
+	int EXAMPLE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1025,16 +2646,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE__NAME = NAMED_ELEMENT__NAME;
+	int EXAMPLE__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int EXAMPLE__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
@@ -1043,7 +2709,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE__INPUT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int EXAMPLE__INPUT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Output</b></em>' attribute.
@@ -1052,7 +2718,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE__OUTPUT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int EXAMPLE__OUTPUT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Example</em>' class.
@@ -1061,7 +2727,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int EXAMPLE_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Example</em>' class.
@@ -1070,7 +2754,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int EXAMPLE_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.ExampleSetImpl <em>Example Set</em>}' class.
@@ -1080,7 +2764,88 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getExampleSet()
 	 * @generated
 	 */
-	int EXAMPLE_SET = 14;
+	int EXAMPLE_SET = 13;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__ID = NxcorePackage.NAMED_PERIOD__ID;
+
+	/**
+	 * The feature id for the '<em><b>Documentation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__DOCUMENTATION = NxcorePackage.NAMED_PERIOD__DOCUMENTATION;
+
+	/**
+	 * The feature id for the '<em><b>Doc Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__DOC_REF = NxcorePackage.NAMED_PERIOD__DOC_REF;
+
+	/**
+	 * The feature id for the '<em><b>Doc Format</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__DOC_FORMAT = NxcorePackage.NAMED_PERIOD__DOC_FORMAT;
+
+	/**
+	 * The feature id for the '<em><b>Doc Contents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__DOC_CONTENTS = NxcorePackage.NAMED_PERIOD__DOC_CONTENTS;
+
+	/**
+	 * The feature id for the '<em><b>Doc Sections</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__DOC_SECTIONS = NxcorePackage.NAMED_PERIOD__DOC_SECTIONS;
+
+	/**
+	 * The feature id for the '<em><b>Markers</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__MARKERS = NxcorePackage.NAMED_PERIOD__MARKERS;
+
+	/**
+	 * The feature id for the '<em><b>Icon</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__ICON = NxcorePackage.NAMED_PERIOD__ICON;
+
+	/**
+	 * The feature id for the '<em><b>Uris</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__URIS = NxcorePackage.NAMED_PERIOD__URIS;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1089,16 +2854,61 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_SET__NAME = NAMED_ELEMENT__NAME;
+	int EXAMPLE_SET__NAME = NxcorePackage.NAMED_PERIOD__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * The feature id for the '<em><b>Duration</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_SET__DESCRIPTION = NAMED_ELEMENT__DESCRIPTION;
+	int EXAMPLE_SET__DURATION = NxcorePackage.NAMED_PERIOD__DURATION;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__START = NxcorePackage.NAMED_PERIOD__START;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__END = NxcorePackage.NAMED_PERIOD__END;
+
+	/**
+	 * The feature id for the '<em><b>Control Applications</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__CONTROL_APPLICATIONS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Risks</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__RISKS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Waivers</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET__WAIVERS = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Examples</b></em>' containment reference list.
@@ -1107,7 +2917,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_SET__EXAMPLES = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int EXAMPLE_SET__EXAMPLES = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Selection Strategy</b></em>' containment reference.
@@ -1116,7 +2926,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_SET__SELECTION_STRATEGY = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int EXAMPLE_SET__SELECTION_STRATEGY = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Example Set</em>' class.
@@ -1125,7 +2935,25 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_SET_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int EXAMPLE_SET_FEATURE_COUNT = NxcorePackage.NAMED_PERIOD_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>Collect</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET___COLLECT__OBJECT_EREFERENCE_ELIST = NxcorePackage.NAMED_PERIOD___COLLECT__OBJECT_EREFERENCE_ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Referrers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXAMPLE_SET___GET_REFERRERS__EREFERENCE = NxcorePackage.NAMED_PERIOD___GET_REFERRERS__EREFERENCE;
 
 	/**
 	 * The number of operations of the '<em>Example Set</em>' class.
@@ -1134,7 +2962,7 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXAMPLE_SET_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int EXAMPLE_SET_OPERATION_COUNT = NxcorePackage.NAMED_PERIOD_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.models.agent.impl.SelectionStrategyImpl <em>Selection Strategy</em>}' class.
@@ -1144,7 +2972,7 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getSelectionStrategy()
 	 * @generated
 	 */
-	int SELECTION_STRATEGY = 15;
+	int SELECTION_STRATEGY = 14;
 
 	/**
 	 * The number of structural features of the '<em>Selection Strategy</em>' class.
@@ -1172,7 +3000,7 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getAllExamples()
 	 * @generated
 	 */
-	int ALL_EXAMPLES = 16;
+	int ALL_EXAMPLES = 15;
 
 	/**
 	 * The feature id for the '<em><b>Limit</b></em>' attribute.
@@ -1209,7 +3037,7 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getSimilaritySelection()
 	 * @generated
 	 */
-	int SIMILARITY_SELECTION = 17;
+	int SIMILARITY_SELECTION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Embedding Model</b></em>' attribute.
@@ -1255,40 +3083,8 @@ public interface AgentPackage extends EPackage {
 	 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getJsonType()
 	 * @generated
 	 */
-	int JSON_TYPE = 18;
+	int JSON_TYPE = 17;
 
-
-	/**
-	 * Returns the meta object for class '{@link org.nasdanika.models.agent.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Element</em>'.
-	 * @see org.nasdanika.models.agent.NamedElement
-	 * @generated
-	 */
-	EClass getNamedElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.agent.NamedElement#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see org.nasdanika.models.agent.NamedElement#getName()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.models.agent.NamedElement#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see org.nasdanika.models.agent.NamedElement#getDescription()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_Description();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.models.agent.AgentSystem <em>System</em>}'.
@@ -1955,32 +3751,6 @@ public interface AgentPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link org.nasdanika.models.agent.impl.NamedElementImpl <em>Named Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.models.agent.impl.NamedElementImpl
-		 * @see org.nasdanika.models.agent.impl.AgentPackageImpl#getNamedElement()
-		 * @generated
-		 */
-		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__DESCRIPTION = eINSTANCE.getNamedElement_Description();
-
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.models.agent.impl.AgentSystemImpl <em>System</em>}' class.
 		 * <!-- begin-user-doc -->

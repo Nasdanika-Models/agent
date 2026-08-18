@@ -2,6 +2,9 @@
  */
 package org.nasdanika.models.agent;
 
+import org.nasdanika.models.governance.Governed;
+
+import org.nasdanika.models.nxcore.NamedPeriod;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +26,7 @@ package org.nasdanika.models.agent;
  * @model
  * @generated
  */
-public interface Resource extends NamedElement {
+public interface Resource extends NamedPeriod, Governed {
 	/**
 	 * Returns the value of the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->

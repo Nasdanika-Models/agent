@@ -23,7 +23,6 @@ import org.nasdanika.models.agent.JavaTool;
 import org.nasdanika.models.agent.JsonType;
 import org.nasdanika.models.agent.Llm;
 import org.nasdanika.models.agent.McpTool;
-import org.nasdanika.models.agent.NamedElement;
 import org.nasdanika.models.agent.Parameter;
 import org.nasdanika.models.agent.Property;
 import org.nasdanika.models.agent.Resource;
@@ -33,6 +32,12 @@ import org.nasdanika.models.agent.Skill;
 import org.nasdanika.models.agent.Task;
 import org.nasdanika.models.agent.Tool;
 
+import org.nasdanika.models.governance.GovernancePackage;
+
+import org.nasdanika.models.nxcore.NxcorePackage;
+
+import org.nasdanika.models.role.RolePackage;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
@@ -40,13 +45,6 @@ import org.nasdanika.models.agent.Tool;
  * @generated
  */
 public class AgentPackageImpl extends EPackageImpl implements AgentPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass namedElementEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -220,7 +218,10 @@ public class AgentPackageImpl extends EPackageImpl implements AgentPackage {
 		isInited = true;
 
 		// Initialize simple dependencies
+		NxcorePackage.eINSTANCE.eClass();
+		GovernancePackage.eINSTANCE.eClass();
 		EcorePackage.eINSTANCE.eClass();
+		RolePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theAgentPackage.createPackageContents();
@@ -234,36 +235,6 @@ public class AgentPackageImpl extends EPackageImpl implements AgentPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(AgentPackage.eNS_URI, theAgentPackage);
 		return theAgentPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getNamedElement() {
-		return namedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNamedElement_Description() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -895,10 +866,6 @@ public class AgentPackageImpl extends EPackageImpl implements AgentPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__DESCRIPTION);
-
 		agentSystemEClass = createEClass(AGENT_SYSTEM);
 		createEReference(agentSystemEClass, AGENT_SYSTEM__MODELS);
 		createEReference(agentSystemEClass, AGENT_SYSTEM__AGENTS);
@@ -1003,6 +970,8 @@ public class AgentPackageImpl extends EPackageImpl implements AgentPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		NxcorePackage theNxcorePackage = (NxcorePackage)EPackage.Registry.INSTANCE.getEPackage(NxcorePackage.eNS_URI);
+		GovernancePackage theGovernancePackage = (GovernancePackage)EPackage.Registry.INSTANCE.getEPackage(GovernancePackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
@@ -1010,27 +979,33 @@ public class AgentPackageImpl extends EPackageImpl implements AgentPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		agentSystemEClass.getESuperTypes().add(this.getNamedElement());
-		llmEClass.getESuperTypes().add(this.getNamedElement());
-		agentEClass.getESuperTypes().add(this.getNamedElement());
-		taskEClass.getESuperTypes().add(this.getNamedElement());
-		parameterEClass.getESuperTypes().add(this.getNamedElement());
-		toolEClass.getESuperTypes().add(this.getNamedElement());
+		agentSystemEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		agentSystemEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		llmEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		llmEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		agentEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		agentEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		taskEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		taskEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		parameterEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		parameterEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		toolEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		toolEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
 		mcpToolEClass.getESuperTypes().add(this.getTool());
 		javaToolEClass.getESuperTypes().add(this.getTool());
 		agentToolEClass.getESuperTypes().add(this.getTool());
-		skillEClass.getESuperTypes().add(this.getNamedElement());
-		resourceEClass.getESuperTypes().add(this.getNamedElement());
-		exampleEClass.getESuperTypes().add(this.getNamedElement());
-		exampleSetEClass.getESuperTypes().add(this.getNamedElement());
+		skillEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		skillEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		resourceEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		resourceEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		exampleEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		exampleEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
+		exampleSetEClass.getESuperTypes().add(theNxcorePackage.getNamedPeriod());
+		exampleSetEClass.getESuperTypes().add(theGovernancePackage.getGoverned());
 		allExamplesEClass.getESuperTypes().add(this.getSelectionStrategy());
 		similaritySelectionEClass.getESuperTypes().add(this.getSelectionStrategy());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), theEcorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNamedElement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(agentSystemEClass, AgentSystem.class, "AgentSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAgentSystem_Models(), this.getLlm(), null, "models", null, 0, -1, AgentSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAgentSystem_Agents(), this.getAgent(), null, "agents", null, 0, -1, AgentSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1146,18 +1121,6 @@ public class AgentPackageImpl extends EPackageImpl implements AgentPackage {
 			   "bundleManifest", "false",
 			   "importOrganizing", "true",
 			   "basePackage", "org.nasdanika.models"
-		   });
-		addAnnotation
-		  (namedElementEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Base class for named model elements."
-		   });
-		addAnnotation
-		  (getNamedElement_Description(),
-		   source,
-		   new String[] {
-			   "documentation", "Markdown documentation of this element."
 		   });
 		addAnnotation
 		  (agentSystemEClass,

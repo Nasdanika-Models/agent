@@ -2,6 +2,9 @@
  */
 package org.nasdanika.models.agent;
 
+import org.nasdanika.models.governance.Governed;
+
+import org.nasdanika.models.nxcore.NamedPeriod;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +28,7 @@ package org.nasdanika.models.agent;
  * @model
  * @generated
  */
-public interface Parameter extends NamedElement {
+public interface Parameter extends NamedPeriod, Governed {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link org.nasdanika.models.agent.JsonType}.

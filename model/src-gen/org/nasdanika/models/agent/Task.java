@@ -4,6 +4,10 @@ package org.nasdanika.models.agent;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.nasdanika.models.governance.Governed;
+
+import org.nasdanika.models.nxcore.NamedPeriod;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Task</b></em>'.
@@ -28,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Task extends NamedElement {
+public interface Task extends NamedPeriod, Governed {
 	/**
 	 * Returns the value of the '<em><b>Expected Output</b></em>' attribute.
 	 * <!-- begin-user-doc -->

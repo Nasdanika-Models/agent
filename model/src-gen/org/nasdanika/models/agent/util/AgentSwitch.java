@@ -9,6 +9,17 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.models.agent.*;
 
+import org.nasdanika.models.governance.Governed;
+
+import org.nasdanika.models.nxcore.Documented;
+import org.nasdanika.models.nxcore.Marked;
+import org.nasdanika.models.nxcore.ModelElement;
+import org.nasdanika.models.nxcore.NamedElement;
+import org.nasdanika.models.nxcore.NamedPeriod;
+import org.nasdanika.models.nxcore.Period;
+import org.nasdanika.models.nxcore.Referrable;
+import org.nasdanika.models.nxcore.StringIdentity;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
@@ -66,16 +77,18 @@ public class AgentSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AgentPackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case AgentPackage.AGENT_SYSTEM: {
 				AgentSystem agentSystem = (AgentSystem)theEObject;
 				T result = caseAgentSystem(agentSystem);
+				if (result == null) result = caseNamedPeriod(agentSystem);
+				if (result == null) result = caseGoverned(agentSystem);
 				if (result == null) result = caseNamedElement(agentSystem);
+				if (result == null) result = casePeriod(agentSystem);
+				if (result == null) result = caseModelElement(agentSystem);
+				if (result == null) result = caseStringIdentity(agentSystem);
+				if (result == null) result = caseDocumented(agentSystem);
+				if (result == null) result = caseMarked(agentSystem);
+				if (result == null) result = caseReferrable(agentSystem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -88,35 +101,75 @@ public class AgentSwitch<T> extends Switch<T> {
 			case AgentPackage.LLM: {
 				Llm llm = (Llm)theEObject;
 				T result = caseLlm(llm);
+				if (result == null) result = caseNamedPeriod(llm);
+				if (result == null) result = caseGoverned(llm);
 				if (result == null) result = caseNamedElement(llm);
+				if (result == null) result = casePeriod(llm);
+				if (result == null) result = caseModelElement(llm);
+				if (result == null) result = caseStringIdentity(llm);
+				if (result == null) result = caseDocumented(llm);
+				if (result == null) result = caseMarked(llm);
+				if (result == null) result = caseReferrable(llm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.AGENT: {
 				Agent agent = (Agent)theEObject;
 				T result = caseAgent(agent);
+				if (result == null) result = caseNamedPeriod(agent);
+				if (result == null) result = caseGoverned(agent);
 				if (result == null) result = caseNamedElement(agent);
+				if (result == null) result = casePeriod(agent);
+				if (result == null) result = caseModelElement(agent);
+				if (result == null) result = caseStringIdentity(agent);
+				if (result == null) result = caseDocumented(agent);
+				if (result == null) result = caseMarked(agent);
+				if (result == null) result = caseReferrable(agent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.TASK: {
 				Task task = (Task)theEObject;
 				T result = caseTask(task);
+				if (result == null) result = caseNamedPeriod(task);
+				if (result == null) result = caseGoverned(task);
 				if (result == null) result = caseNamedElement(task);
+				if (result == null) result = casePeriod(task);
+				if (result == null) result = caseModelElement(task);
+				if (result == null) result = caseStringIdentity(task);
+				if (result == null) result = caseDocumented(task);
+				if (result == null) result = caseMarked(task);
+				if (result == null) result = caseReferrable(task);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
+				if (result == null) result = caseNamedPeriod(parameter);
+				if (result == null) result = caseGoverned(parameter);
 				if (result == null) result = caseNamedElement(parameter);
+				if (result == null) result = casePeriod(parameter);
+				if (result == null) result = caseModelElement(parameter);
+				if (result == null) result = caseStringIdentity(parameter);
+				if (result == null) result = caseDocumented(parameter);
+				if (result == null) result = caseMarked(parameter);
+				if (result == null) result = caseReferrable(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.TOOL: {
 				Tool tool = (Tool)theEObject;
 				T result = caseTool(tool);
+				if (result == null) result = caseNamedPeriod(tool);
+				if (result == null) result = caseGoverned(tool);
 				if (result == null) result = caseNamedElement(tool);
+				if (result == null) result = casePeriod(tool);
+				if (result == null) result = caseModelElement(tool);
+				if (result == null) result = caseStringIdentity(tool);
+				if (result == null) result = caseDocumented(tool);
+				if (result == null) result = caseMarked(tool);
+				if (result == null) result = caseReferrable(tool);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,7 +177,15 @@ public class AgentSwitch<T> extends Switch<T> {
 				McpTool mcpTool = (McpTool)theEObject;
 				T result = caseMcpTool(mcpTool);
 				if (result == null) result = caseTool(mcpTool);
+				if (result == null) result = caseNamedPeriod(mcpTool);
+				if (result == null) result = caseGoverned(mcpTool);
 				if (result == null) result = caseNamedElement(mcpTool);
+				if (result == null) result = casePeriod(mcpTool);
+				if (result == null) result = caseModelElement(mcpTool);
+				if (result == null) result = caseStringIdentity(mcpTool);
+				if (result == null) result = caseDocumented(mcpTool);
+				if (result == null) result = caseMarked(mcpTool);
+				if (result == null) result = caseReferrable(mcpTool);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -132,7 +193,15 @@ public class AgentSwitch<T> extends Switch<T> {
 				JavaTool javaTool = (JavaTool)theEObject;
 				T result = caseJavaTool(javaTool);
 				if (result == null) result = caseTool(javaTool);
+				if (result == null) result = caseNamedPeriod(javaTool);
+				if (result == null) result = caseGoverned(javaTool);
 				if (result == null) result = caseNamedElement(javaTool);
+				if (result == null) result = casePeriod(javaTool);
+				if (result == null) result = caseModelElement(javaTool);
+				if (result == null) result = caseStringIdentity(javaTool);
+				if (result == null) result = caseDocumented(javaTool);
+				if (result == null) result = caseMarked(javaTool);
+				if (result == null) result = caseReferrable(javaTool);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,35 +209,75 @@ public class AgentSwitch<T> extends Switch<T> {
 				AgentTool agentTool = (AgentTool)theEObject;
 				T result = caseAgentTool(agentTool);
 				if (result == null) result = caseTool(agentTool);
+				if (result == null) result = caseNamedPeriod(agentTool);
+				if (result == null) result = caseGoverned(agentTool);
 				if (result == null) result = caseNamedElement(agentTool);
+				if (result == null) result = casePeriod(agentTool);
+				if (result == null) result = caseModelElement(agentTool);
+				if (result == null) result = caseStringIdentity(agentTool);
+				if (result == null) result = caseDocumented(agentTool);
+				if (result == null) result = caseMarked(agentTool);
+				if (result == null) result = caseReferrable(agentTool);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.SKILL: {
 				Skill skill = (Skill)theEObject;
 				T result = caseSkill(skill);
+				if (result == null) result = caseNamedPeriod(skill);
+				if (result == null) result = caseGoverned(skill);
 				if (result == null) result = caseNamedElement(skill);
+				if (result == null) result = casePeriod(skill);
+				if (result == null) result = caseModelElement(skill);
+				if (result == null) result = caseStringIdentity(skill);
+				if (result == null) result = caseDocumented(skill);
+				if (result == null) result = caseMarked(skill);
+				if (result == null) result = caseReferrable(skill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.RESOURCE: {
 				Resource resource = (Resource)theEObject;
 				T result = caseResource(resource);
+				if (result == null) result = caseNamedPeriod(resource);
+				if (result == null) result = caseGoverned(resource);
 				if (result == null) result = caseNamedElement(resource);
+				if (result == null) result = casePeriod(resource);
+				if (result == null) result = caseModelElement(resource);
+				if (result == null) result = caseStringIdentity(resource);
+				if (result == null) result = caseDocumented(resource);
+				if (result == null) result = caseMarked(resource);
+				if (result == null) result = caseReferrable(resource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.EXAMPLE: {
 				Example example = (Example)theEObject;
 				T result = caseExample(example);
+				if (result == null) result = caseNamedPeriod(example);
+				if (result == null) result = caseGoverned(example);
 				if (result == null) result = caseNamedElement(example);
+				if (result == null) result = casePeriod(example);
+				if (result == null) result = caseModelElement(example);
+				if (result == null) result = caseStringIdentity(example);
+				if (result == null) result = caseDocumented(example);
+				if (result == null) result = caseMarked(example);
+				if (result == null) result = caseReferrable(example);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case AgentPackage.EXAMPLE_SET: {
 				ExampleSet exampleSet = (ExampleSet)theEObject;
 				T result = caseExampleSet(exampleSet);
+				if (result == null) result = caseNamedPeriod(exampleSet);
+				if (result == null) result = caseGoverned(exampleSet);
 				if (result == null) result = caseNamedElement(exampleSet);
+				if (result == null) result = casePeriod(exampleSet);
+				if (result == null) result = caseModelElement(exampleSet);
+				if (result == null) result = caseStringIdentity(exampleSet);
+				if (result == null) result = caseDocumented(exampleSet);
+				if (result == null) result = caseMarked(exampleSet);
+				if (result == null) result = caseReferrable(exampleSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -194,21 +303,6 @@ public class AgentSwitch<T> extends Switch<T> {
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedElement(NamedElement object) {
-		return null;
 	}
 
 	/**
@@ -463,6 +557,141 @@ public class AgentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSimilaritySelection(SimilaritySelection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Referrable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Referrable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseReferrable(Referrable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Identity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Identity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringIdentity(StringIdentity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Documented</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Documented</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocumented(Documented object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Marked</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Marked</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMarked(Marked object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModelElement(ModelElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Period</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Period</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePeriod(Period object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Period</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Period</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedPeriod(NamedPeriod object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Governed</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Governed</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGoverned(Governed object) {
 		return null;
 	}
 

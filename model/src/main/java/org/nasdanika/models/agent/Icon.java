@@ -1,11 +1,11 @@
-package org.nasdanika.models.accounting;
+package org.nasdanika.models.agent;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 public enum Icon {
 	
-    ACCOUNT(AccountingPackage.Literals.ACCOUNT , "TODO");
+    AGENT(AgentPackage.Literals.AGENT , "TODO");
 	
     private static final String BASE_URL = "https://accounting.models.nasdanika.org/images/";
 

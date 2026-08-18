@@ -4,6 +4,10 @@ package org.nasdanika.models.agent;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.nasdanika.models.governance.Governed;
+
+import org.nasdanika.models.nxcore.NamedPeriod;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>System</b></em>'.
@@ -28,7 +32,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AgentSystem extends NamedElement {
+public interface AgentSystem extends NamedPeriod, Governed {
 	/**
 	 * Returns the value of the '<em><b>Models</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.models.agent.Llm}.

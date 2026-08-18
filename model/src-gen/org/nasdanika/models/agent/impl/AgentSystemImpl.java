@@ -21,6 +21,14 @@ import org.nasdanika.models.agent.Skill;
 import org.nasdanika.models.agent.Task;
 import org.nasdanika.models.agent.Tool;
 
+import org.nasdanika.models.governance.ControlApplication;
+import org.nasdanika.models.governance.GovernancePackage;
+import org.nasdanika.models.governance.Governed;
+import org.nasdanika.models.governance.Risk;
+import org.nasdanika.models.governance.Waiver;
+
+import org.nasdanika.models.nxcore.impl.NamedPeriodImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>System</b></em>'.
@@ -29,6 +37,9 @@ import org.nasdanika.models.agent.Tool;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.models.agent.impl.AgentSystemImpl#getControlApplications <em>Control Applications</em>}</li>
+ *   <li>{@link org.nasdanika.models.agent.impl.AgentSystemImpl#getRisks <em>Risks</em>}</li>
+ *   <li>{@link org.nasdanika.models.agent.impl.AgentSystemImpl#getWaivers <em>Waivers</em>}</li>
  *   <li>{@link org.nasdanika.models.agent.impl.AgentSystemImpl#getModels <em>Models</em>}</li>
  *   <li>{@link org.nasdanika.models.agent.impl.AgentSystemImpl#getAgents <em>Agents</em>}</li>
  *   <li>{@link org.nasdanika.models.agent.impl.AgentSystemImpl#getTasks <em>Tasks</em>}</li>
@@ -38,7 +49,7 @@ import org.nasdanika.models.agent.Tool;
  *
  * @generated
  */
-public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
+public class AgentSystemImpl extends NamedPeriodImpl implements AgentSystem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,6 +67,39 @@ public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
 	@Override
 	protected EClass eStaticClass() {
 		return AgentPackage.Literals.AGENT_SYSTEM;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<ControlApplication> getControlApplications() {
+		return (EList<ControlApplication>)eDynamicGet(AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS, GovernancePackage.Literals.GOVERNED__CONTROL_APPLICATIONS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Risk> getRisks() {
+		return (EList<Risk>)eDynamicGet(AgentPackage.AGENT_SYSTEM__RISKS, GovernancePackage.Literals.GOVERNED__RISKS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Waiver> getWaivers() {
+		return (EList<Waiver>)eDynamicGet(AgentPackage.AGENT_SYSTEM__WAIVERS, GovernancePackage.Literals.GOVERNED__WAIVERS, true, true);
 	}
 
 	/**
@@ -118,9 +162,34 @@ public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getControlApplications()).basicAdd(otherEnd, msgs);
+			case AgentPackage.AGENT_SYSTEM__RISKS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRisks()).basicAdd(otherEnd, msgs);
+			case AgentPackage.AGENT_SYSTEM__WAIVERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getWaivers()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS:
+				return ((InternalEList<?>)getControlApplications()).basicRemove(otherEnd, msgs);
+			case AgentPackage.AGENT_SYSTEM__RISKS:
+				return ((InternalEList<?>)getRisks()).basicRemove(otherEnd, msgs);
+			case AgentPackage.AGENT_SYSTEM__WAIVERS:
+				return ((InternalEList<?>)getWaivers()).basicRemove(otherEnd, msgs);
 			case AgentPackage.AGENT_SYSTEM__MODELS:
 				return ((InternalEList<?>)getModels()).basicRemove(otherEnd, msgs);
 			case AgentPackage.AGENT_SYSTEM__AGENTS:
@@ -143,6 +212,12 @@ public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS:
+				return getControlApplications();
+			case AgentPackage.AGENT_SYSTEM__RISKS:
+				return getRisks();
+			case AgentPackage.AGENT_SYSTEM__WAIVERS:
+				return getWaivers();
 			case AgentPackage.AGENT_SYSTEM__MODELS:
 				return getModels();
 			case AgentPackage.AGENT_SYSTEM__AGENTS:
@@ -166,6 +241,18 @@ public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS:
+				getControlApplications().clear();
+				getControlApplications().addAll((Collection<? extends ControlApplication>)newValue);
+				return;
+			case AgentPackage.AGENT_SYSTEM__RISKS:
+				getRisks().clear();
+				getRisks().addAll((Collection<? extends Risk>)newValue);
+				return;
+			case AgentPackage.AGENT_SYSTEM__WAIVERS:
+				getWaivers().clear();
+				getWaivers().addAll((Collection<? extends Waiver>)newValue);
+				return;
 			case AgentPackage.AGENT_SYSTEM__MODELS:
 				getModels().clear();
 				getModels().addAll((Collection<? extends Llm>)newValue);
@@ -198,6 +285,15 @@ public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS:
+				getControlApplications().clear();
+				return;
+			case AgentPackage.AGENT_SYSTEM__RISKS:
+				getRisks().clear();
+				return;
+			case AgentPackage.AGENT_SYSTEM__WAIVERS:
+				getWaivers().clear();
+				return;
 			case AgentPackage.AGENT_SYSTEM__MODELS:
 				getModels().clear();
 				return;
@@ -225,6 +321,12 @@ public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS:
+				return !getControlApplications().isEmpty();
+			case AgentPackage.AGENT_SYSTEM__RISKS:
+				return !getRisks().isEmpty();
+			case AgentPackage.AGENT_SYSTEM__WAIVERS:
+				return !getWaivers().isEmpty();
 			case AgentPackage.AGENT_SYSTEM__MODELS:
 				return !getModels().isEmpty();
 			case AgentPackage.AGENT_SYSTEM__AGENTS:
@@ -237,6 +339,42 @@ public class AgentSystemImpl extends NamedElementImpl implements AgentSystem {
 				return !getSkills().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Governed.class) {
+			switch (derivedFeatureID) {
+				case AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS: return GovernancePackage.GOVERNED__CONTROL_APPLICATIONS;
+				case AgentPackage.AGENT_SYSTEM__RISKS: return GovernancePackage.GOVERNED__RISKS;
+				case AgentPackage.AGENT_SYSTEM__WAIVERS: return GovernancePackage.GOVERNED__WAIVERS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Governed.class) {
+			switch (baseFeatureID) {
+				case GovernancePackage.GOVERNED__CONTROL_APPLICATIONS: return AgentPackage.AGENT_SYSTEM__CONTROL_APPLICATIONS;
+				case GovernancePackage.GOVERNED__RISKS: return AgentPackage.AGENT_SYSTEM__RISKS;
+				case GovernancePackage.GOVERNED__WAIVERS: return AgentPackage.AGENT_SYSTEM__WAIVERS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //AgentSystemImpl

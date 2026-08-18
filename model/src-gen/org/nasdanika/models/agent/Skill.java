@@ -4,6 +4,10 @@ package org.nasdanika.models.agent;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.nasdanika.models.governance.Governed;
+
+import org.nasdanika.models.nxcore.NamedPeriod;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Skill</b></em>'.
@@ -25,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Skill extends NamedElement {
+public interface Skill extends NamedPeriod, Governed {
 	/**
 	 * Returns the value of the '<em><b>Instructions</b></em>' attribute.
 	 * <!-- begin-user-doc -->

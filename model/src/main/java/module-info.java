@@ -1,17 +1,18 @@
 import org.nasdanika.capability.CapabilityFactory;
-import org.nasdanika.models.accounting.capability.AccountingEPackageResourceSetCapabilityFactory;
+import org.nasdanika.models.agent.capability.AgentEPackageResourceSetCapabilityFactory;
 
-module org.nasdanika.models.accounting {
+module org.nasdanika.models.agent {
 	
-	exports org.nasdanika.models.accounting;
-	exports org.nasdanika.models.accounting.impl;
-	exports org.nasdanika.models.accounting.util;
+	exports org.nasdanika.models.agent;
+	exports org.nasdanika.models.agent.impl;
+	exports org.nasdanika.models.agent.util;
+	opens org.nasdanika.models.agent;
 	
 	requires transitive org.eclipse.emf.ecore;
 	requires transitive org.eclipse.emf.common;
-	requires transitive org.nasdanika.capability;
+	requires transitive org.nasdanika.models.governance.ai;
 	
 	provides CapabilityFactory with 
-		AccountingEPackageResourceSetCapabilityFactory;
+		AgentEPackageResourceSetCapabilityFactory;
 	
 }

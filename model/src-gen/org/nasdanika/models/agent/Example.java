@@ -2,6 +2,9 @@
  */
 package org.nasdanika.models.agent;
 
+import org.nasdanika.models.governance.Governed;
+
+import org.nasdanika.models.nxcore.NamedPeriod;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +27,7 @@ package org.nasdanika.models.agent;
  * @model
  * @generated
  */
-public interface Example extends NamedElement {
+public interface Example extends NamedPeriod, Governed {
 	/**
 	 * Returns the value of the '<em><b>Input</b></em>' attribute.
 	 * <!-- begin-user-doc -->
